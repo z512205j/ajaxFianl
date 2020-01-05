@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Firebase Authentication via Email</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBclRWLWuxXR0LjDc3w2GnuW2etw2-MGsE",
+        authDomain: "ajaxfinal.firebaseapp.com",
+        databaseURL: "https://ajaxfinal.firebaseio.com",
+        projectId: "ajaxfinal",
+        storageBucket: "ajaxfinal.appspot.com",
+        messagingSenderId: "37234713971",
+        appId: "1:37234713971:web:ec1c42fd7bc56c1eaad106"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+    <script> 
+        $(document).ready(function(){  
+            $("#SignUp").click(function(){
+                var email         = $('#email').val();
+                var password    = $('#pwd').val();
+                firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
+                  // Handle Errors here.
+                  const errorCode = error.code;
+                  const errorMessage = error.message;
+                  // ...
+                  alert(errorMessage)
+                }).then(function (error) { if (error.code != 400) alert("成功創建用戶認證！"); });
+            });                         
+        });         
+    </script>
+
+  </head>
+  
+  <body>
+    <h1>Firebase Authentication Sign Up via Email</h1>
+
+    <input type="text" id="email"      placeholder="Email"/>
+    <input type="text" id="pwd"       placeholder="密碼"/>  
+    <button id="SignUp">註冊</button><br><br>  
+
+  </body>
+</html>
