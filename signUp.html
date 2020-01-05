@@ -4,23 +4,21 @@
     <meta charset="UTF-8">
     <title>Firebase Authentication via Email</title>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-	  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
-
-
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyBclRWLWuxXR0LjDc3w2GnuW2etw2-MGsE",
-        authDomain: "ajaxfinal.firebaseapp.com",
-        databaseURL: "https://ajaxfinal.firebaseio.com",
-        projectId: "ajaxfinal",
-        storageBucket: "ajaxfinal.appspot.com",
-        messagingSenderId: "37234713971",
-        appId: "1:37234713971:web:ec1c42fd7bc56c1eaad106"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
+	 
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyBclRWLWuxXR0LjDc3w2GnuW2etw2-MGsE",
+          authDomain: "ajaxfinal.firebaseapp.com",
+          databaseURL: "https://ajaxfinal.firebaseio.com",
+          projectId: "ajaxfinal",
+          storageBucket: "ajaxfinal.appspot.com",
+          messagingSenderId: "37234713971",
+          appId: "1:37234713971:web:ec1c42fd7bc56c1eaad106"
+        };
+        firebase.initializeApp(config);
+      </script>
 
 
     <script> 
